@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Meu Site</title>
+    <!-- Vincula o arquivo CSS externo -->
+    <link href="pasta.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <img src="imagens/Logo-site-ManahCorp.png" alt="Logo" class="img-fluid mb-3 logo">
+        <a href="pasta.html">Início</a>
+        <div class="dropdown">
+            <a href="servicos.html" class="dropdown-btn active">Serviços</a>
+            <div class="dropdown-content">
+                <a href="empresarial.html">Plano Empresarial</a>
+                <a href="adesão.html">Plano Adesão</a>
+                <a href="individual-familiar.html">Plano Individual ou Familiar</a>
+                <a href="odontologico.html">Plano Odontológico</a>
+            </div>
+        </div>
+        <a href="sobre.html">Quem somos</a>
+        <a href="contato.html">Contato</a>
+
+        <div class="rodape-menu">
+            <p>(11) 98865-4534</p>
+            <p>Rua Oito de Dezembro, 24 | Jd Munhoz, Guarulhos | SP | 07032-031</p>
+        </div>
+    </div>
+
+    <!-- plano empresarial -->
+
+    <div>
+        <div class="container-fluid titulo">
+            <h1>Planos de saúde individual ou familiar</h1>
+        </div>
+        <div class="container-fluid texto-trabalho">
+            <p>Oferecer um bom plano de saúde para empresa gera valor, produtividade e diminui o absenteísmo dos colaboradores.</p>
+            <p>Assim, cada vez mais esse benefício se torna um ótimo diferencial, principalmente quando ele é reconhecido pelos colaboradores como um bom plano.</p>
+            <p>Certamente há planos de saúde empresariais que atendem Grandes, Médias e Pequenas Empresas, com diversas variações e possibilidades.</p>
+            <p>Temos diversas opções de planos de saúde <a href="individual-familiar.html" class="link-destaque">individual ou familiar</a>, <a href="empresarial.html" class="link-destaque">corporativos</a>, <a href="adesão.html" class="link-destaque">por adesão</a> e <a href="odontologico.html" class="link-destaque">planos odontológicos</a>.</p>
+            <p>Atendemos toda região de Guarulhos e São Paulo.</p>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer id="footer" class="footer">
+        <div class="direitos-site">
+            <p>&copy; 2021 - Manah Consultoria e Gestão em Seguros e Benefícios LTDA</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const footer = document.getElementById("footer");
+    
+            function checkScroll() {
+                const scrollHeight = document.documentElement.scrollHeight;
+                const clientHeight = window.innerHeight;
+                const scrollY = window.scrollY || window.pageYOffset;
+    
+                console.log(`Scroll Height: ${scrollHeight}, Scroll Position: ${scrollY + clientHeight}`);
+    
+                // Se o usuário estiver no final da página, exibe o rodapé
+                if (scrollY + clientHeight >= scrollHeight - 10) {
+                    footer.classList.remove("d-none");
+                    footer.classList.add("d-block");
+                } else {
+                    footer.classList.add("d-none");
+                    footer.classList.remove("d-block");
+                }
+            }
+    
+            window.addEventListener("scroll", checkScroll);
+            window.addEventListener("resize", checkScroll);
+            
+            // Força a verificação inicial
+            checkScroll();
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const footer = document.getElementById("footer");
+    
+            function checkScroll() {
+                const scrollHeight = document.documentElement.scrollHeight;
+                const clientHeight = window.innerHeight;
+                const scrollY = window.scrollY || window.pageYOffset;
+    
+                // Se o usuário estiver no final da página, aplica a animação
+                if (scrollY + clientHeight >= scrollHeight - 10) {
+                    footer.classList.add("show");
+                } else {
+                    footer.classList.remove("show");
+                }
+            }
+    
+            window.addEventListener("scroll", checkScroll);
+            window.addEventListener("resize", checkScroll);
+    
+            // Força a verificação inicial
+            checkScroll();
+        });
+    </script>
+
+    <!-- Popup Modal -->
+    <div id="popupContato" class="popup-container">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Fale Conosco!</h2>
+            <form action="https://formspree.io/f/xkgjgjjg"
+            method="POST" id="formContato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const popup = document.getElementById("popupContato");
+            const closeBtn = document.querySelector(".close-btn");
+        
+            function abrirPopup() {
+                popup.style.display = "flex";
+            }
+        
+            function fecharPopup() {
+                popup.style.display = "none";
+                setTimeout(abrirPopup, 3 * 60 * 1000); // Reabre em 3 minutos (180000 ms)
+            }
+        
+            // Exibir o popup assim que a página carregar
+            abrirPopup();
+        
+            // Fechar o popup ao clicar no botão de fechar
+            closeBtn.addEventListener("click", fecharPopup);
+        
+            // Fechar o popup ao clicar fora do conteúdo
+            popup.addEventListener("click", function(event) {
+                // Verificar se o clique foi fora do conteúdo (ou seja, na área de fundo do modal)
+                if (event.target === popup) {
+                    fecharPopup();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

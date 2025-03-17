@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/Logo-site-ManahCorp-favicon.png">
     <title>Sobre - Meu Site</title>
     <!-- Vincula o arquivo CSS externo -->
     <link href="pasta.css" rel="stylesheet">
@@ -39,10 +40,8 @@
             <h1>Planos de saúde por adesão</h1>
         </div>
         <div class="container-fluid texto-trabalho">
-            <p>Oferecer um bom plano de saúde para empresa gera valor, produtividade e diminui o absenteísmo dos colaboradores.</p>
-            <p>Assim, cada vez mais esse benefício se torna um ótimo diferencial, principalmente quando ele é reconhecido pelos colaboradores como um bom plano.</p>
-            <p>Certamente há planos de saúde empresariais que atendem Grandes, Médias e Pequenas Empresas, com diversas variações e possibilidades.</p>
-            <p>Temos diversas opções de planos de saúde <a href="individual-familiar.html" class="link-destaque">individual ou familiar</a>, <a href="empresarial.html" class="link-destaque">corporativos</a>, <a href="adesão.html" class="link-destaque">por adesão</a> e <a href="odontologico.html" class="link-destaque">planos odontológicos</a>.</p>
+            <p>O plano de saúde por adesão são viabilizados para grupos de pessoas definidos de acordo com a sua categoria profissional ou área de atuação e vinculadas a uma entidade de classe ou instituição que as representa.</p>
+            <p>A administração desses planos é feita por uma Administradora especializada, tais como Qualicorp e Divicom por exemplo.</p>            <p>Temos diversas opções de planos de saúde <a href="individual-familiar.html" class="link-destaque">individual ou familiar</a>, <a href="empresarial.html" class="link-destaque">corporativos</a>, <a href="adesão.html" class="link-destaque">por adesão</a> e <a href="odontologico.html" class="link-destaque">planos odontológicos</a>.</p>
             <p>Atendemos toda região de Guarulhos e São Paulo.</p>
         </div>
     </div>
@@ -142,8 +141,6 @@
                 setTimeout(abrirPopup, 3 * 60 * 1000); // Reabre em 3 minutos (180000 ms)
             }
         
-            // Exibir o popup assim que a página carregar
-            abrirPopup();
         
             // Fechar o popup ao clicar no botão de fechar
             closeBtn.addEventListener("click", fecharPopup);
@@ -157,6 +154,90 @@
             });
         });
     </script>
+
+<div class="container mt-5">
+    <div class="form-container caixa-formulario">
+        <div class="entre-contato">
+            <h1>Faça uma cotação!</h1>
+        </div>
+        <form action="https://formspree.io/f/meoaoeno"
+        method="POST">
+            <div class="row">
+                <!-- Nome -->
+                <div class="col-md-6 mb-3">
+                    <label for="nome" class="form-label">Nome Completo:</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+
+                <!-- Telefone -->
+                <div class="col-md-6 mb-3">
+                    <label for="telefone" class="form-label">Telefone:</label>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- E-mail -->
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <!-- CPF ou CNPJ -->
+                <div class="col-md-6 mb-3">
+                    <label for="cpf-cnpj" class="form-label">CPF ou CNPJ:</label>
+                    <input type="text" class="form-control" id="cpf-cnpj" name="cpf_cnpj" required>
+                </div>
+            </div>
+
+            <!-- Número de pessoas -->
+            <div class="mb-3">
+                <label for="num-pessoas" class="form-label">Quantas pessoas serão inclusas no plano?</label>
+                <input type="number" class="form-control" id="num-pessoas" name="num_pessoas" required min="1">
+            </div>
+
+            <!-- Idades das pessoas -->
+            <div id="idades-container" class="idade-container"></div>
+
+            <button type="submit" class="btn btn-primary botao-formulario">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Função para adicionar os campos de idade conforme o número de pessoas
+    document.getElementById("num-pessoas").addEventListener("input", function() {
+        const numPessoas = parseInt(this.value);
+        const container = document.getElementById("idades-container");
+
+        // Limpa os campos de idades anteriores
+        container.innerHTML = "";
+
+        // Cria um campo para cada pessoa
+        for (let i = 1; i <= numPessoas; i++) {
+            const idadeDiv = document.createElement("div");
+            idadeDiv.classList.add("form-group");  // Mantém a estrutura dos campos de formulário
+
+            const label = document.createElement("label");
+            label.classList.add("form-label");
+            label.textContent = `Pessoa ${i}`;
+            idadeDiv.appendChild(label);
+
+            const input = document.createElement("input");
+            input.type = "number";
+            input.classList.add("form-control");
+            input.name = `idade_${i}`;
+            input.required = true;
+
+            idadeDiv.appendChild(input);
+            container.appendChild(idadeDiv);
+        }
+    });
+    
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

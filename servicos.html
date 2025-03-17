@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/Logo-site-ManahCorp-favicon.png">
     <title>Serviços - Meu Site</title>
     <link href="pasta.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -35,8 +36,9 @@
     <div class="container-fluid entre-em-contato">
         <h1>Nossos Serviços</h1>
     </div>
-    <div class="texto-entre-contato">
-        <p>Oferecemos uma variedade de serviços, incluindo desenvolvimento de sites e aplicações, consultoria em tecnologia e muito mais. Entre em contato para saber mais!</p>
+    <div class="container-fluid texto-entre-contato">
+        <p>Oferecer um plano de saúde de qualidade é essencial para garantir bem-estar, segurança e tranquilidade. Além de proporcionar acesso a um atendimento médico eficiente, ele também contribui para a qualidade de vida dos beneficiários.</p>
+        <p>Com isso, investir em um bom plano de saúde se torna um diferencial importante, seja para indivíduos, famílias ou empresas, promovendo mais saúde e prevenindo imprevistos.</p>
     </div>
 
     <div class="container text-center mt-5">
@@ -117,6 +119,27 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="div-texto-planos">
+        <h1 class="texto-planos">Nossos parceiros:</h1>
+        <div class="imagem-planos">
+            <div class="marquee">
+                <img src="imagens/logo-plano-saude-amil-manah-corp.png" alt="Logo-amil">
+                <img src="imagens/plano-saude-notredame-intermedica-logo-manah-corp.png" alt="Logo-intermedica">
+                <img src="imagens/plano-saude-seguro-auto-sulamerica-logo-manah-corp.png" alt="Logo-sulamerica">
+                <img src="imagens/unimed.png" alt="Logo-unimed">
+                <img src="imagens/porto-seguro-auto-plano-saude-logo-manah-corp.png" alt="Logo-porto">
+                
+                <!-- Duplicação das imagens para efeito infinito -->
+                <img src="imagens/logo-plano-saude-amil-manah-corp.png" alt="Logo-amil">
+                <img src="imagens/plano-saude-notredame-intermedica-logo-manah-corp.png" alt="Logo-intermedica">
+                <img src="imagens/plano-saude-seguro-auto-sulamerica-logo-manah-corp.png" alt="Logo-sulamerica">
+                <img src="imagens/unimed.png" alt="Logo-unimed">
+                <img src="imagens/porto-seguro-auto-plano-saude-logo-manah-corp.png" alt="Logo-porto">
+            </div>
+        </div>
+    </div>
+
 
     <!-- Rodapé -->
     <footer id="footer" class="footer">
@@ -213,9 +236,6 @@
                 setTimeout(abrirPopup, 3 * 60 * 1000); // Reabre em 3 minutos (180000 ms)
             }
         
-            // Exibir o popup assim que a página carregar
-            abrirPopup();
-        
             // Fechar o popup ao clicar no botão de fechar
             closeBtn.addEventListener("click", fecharPopup);
         
@@ -231,4 +251,3 @@
 
 </body>
 </html>
-

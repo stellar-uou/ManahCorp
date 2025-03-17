@@ -453,8 +453,6 @@ footer {
     }
 
     .texto-entre-contato {
-        display: flex;
-        text-align: center;
         margin: 20px;
         margin-bottom: 0px;
         font-size: 15px;

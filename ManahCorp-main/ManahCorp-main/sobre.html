@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Meu Site</title>
+    <!-- Vincula o arquivo CSS externo -->
+    <link href="pasta.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Menu Lateral -->
+    <div class="sidebar">
+        <img src="imagens/Logo-site-ManahCorp.png" alt="Logo" class="img-fluid mb-3 logo">
+        <a href="pasta.html">Início</a>
+        <div class="dropdown">
+            <a href="servicos.html" class="dropdown-btn">Serviços</a>
+            <div class="dropdown-content">
+                <a href="empresarial.html">Plano Empresarial</a>
+                <a href="adesão.html">Plano Adesão</a>
+                <a href="individual-familiar.html">Plano Individual ou Familiar</a>
+                <a href="odontologico.html">Plano Odontológico</a>
+            </div>
+        </div>
+        <a href="sobre.html" class="active">Quem somos</a>
+        <a href="contato.html">Contato</a>
+
+        <div class="rodape-menu">
+            <p>(11) 98865-4534</p>
+            <p>Rua Oito de Dezembro, 24 | Jd Munhoz, Guarulhos | SP | 07032-031</p>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container-fluid conteudo-1">
+        <h1>ManahCorp</h1>
+        <p>Hoje a ManahCorp atua principalmente em Guarulhos e São Paulo atendendo em todos os Ramos de Seguros! Destaca-se sua Especialização nos segmentos de Plano de Saúde e Plano Odontológico!</p>
+        <p>O Cliente Corporativo da ManahCorp tem para seu Benefício de Planos de Saúde e Odontológico de seus Colaboradores todo o Apoio para Departamento de Pessoas.</p>
+        <p>A ManahCorp realiza a Movimentação Cadastral dos Funcionários, Inclusão e Exclusão dos Colaboradores e também Realiza Palestras de Uso Consciente do Plano de Saúde, com o objetivo de Saúde Preventiva.</p>
+        <p>Acreditamos que a Promoção de Saúde preventiva entre os Funcionários evita o Alto Custo da Utilização sem orientação que geram os Reajustes mais altos para Empresa que dá o Benefício e, dessa forma, todos ganham.</p>
+    </div>
+    <div class="container-fluid conteudo-2">
+        <h1>Experiência</h1>
+        <p>A ManahCorp surgiu do sonho de seus sócios fundadores de levar a melhor expertise na área de Planos de saúde e seguros, desde que iniciaram suas carreiras no ano de 1997.
+        <p>Atuando como a consultoria que busca o interesse de seus clientes em primeiro lugar, buscamos compreender de maneira eficaz o perfil e as necessidades da empresa ou pessoa  para lhes apresentar as melhores possibilidades de contratação, que os atenda em seus objetivos.</p>
+        <p>Os Sócios Fundadores da ManahCorp, Márcio Carvalho e Nádia Pimenta são Profissionais com Experiência de mais de 20 anos no Setor de Corretagem e Consultoria em Planos e Seguro Saúde.</p>
+        <p>Experiência Gerencial em grandes Empresas do Setor, tais como: Amil, Unimed e Notredame Intermédica. E também Formação Acadêmica específica no Setor. Experiência essa que somada ao Atendimento de Excelência está à disposição de seus Clientes e Futuros Clientes!</p>
+    </div>
+    <div class="container-fluid conteudo-3">
+        <h1>Atendimento diferenciado</h1>
+        <p>A ManahCorp encontra as Melhores Soluções de Contratação para todos os Perfis de Cliente: Empresa, Família ou pela Profissão e, assim, você pode contar conosco sempre. Colocamos toda nossa expertise a seu dispor.</p>
+        <p>Temos diversas opções de planos de saúde individual ou familiar, corporativos, por adesão e planos odontológicos.</p>
+        <p>ManahCorp Inteligência em Consultoria Empresarial a seu Serviço.</p>
+    </div>
+
+    <!-- Rodapé -->
+    <footer id="footer" class="footer">
+        <div class="direitos-site">
+            <p>&copy; 2021 - Manah Consultoria e Gestão em Seguros e Benefícios LTDA</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const footer = document.getElementById("footer");
+    
+            function checkScroll() {
+                const scrollHeight = document.documentElement.scrollHeight;
+                const clientHeight = window.innerHeight;
+                const scrollY = window.scrollY || window.pageYOffset;
+    
+                console.log(`Scroll Height: ${scrollHeight}, Scroll Position: ${scrollY + clientHeight}`);
+    
+                // Se o usuário estiver no final da página, exibe o rodapé
+                if (scrollY + clientHeight >= scrollHeight - 10) {
+                    footer.classList.remove("d-none");
+                    footer.classList.add("d-block");
+                } else {
+                    footer.classList.add("d-none");
+                    footer.classList.remove("d-block");
+                }
+            }
+    
+            window.addEventListener("scroll", checkScroll);
+            window.addEventListener("resize", checkScroll);
+            
+            // Força a verificação inicial
+            checkScroll();
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const footer = document.getElementById("footer");
+    
+            function checkScroll() {
+                const scrollHeight = document.documentElement.scrollHeight;
+                const clientHeight = window.innerHeight;
+                const scrollY = window.scrollY || window.pageYOffset;
+    
+                // Se o usuário estiver no final da página, aplica a animação
+                if (scrollY + clientHeight >= scrollHeight - 10) {
+                    footer.classList.add("show");
+                } else {
+                    footer.classList.remove("show");
+                }
+            }
+    
+            window.addEventListener("scroll", checkScroll);
+            window.addEventListener("resize", checkScroll);
+    
+            // Força a verificação inicial
+            checkScroll();
+        });
+    </script>
+
+    <!-- Popup Modal -->
+    <div id="popupContato" class="popup-container">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Fale Conosco!</h2>
+            <form action="https://formspree.io/f/xkgjgjjg"
+            method="POST" id="formContato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const popup = document.getElementById("popupContato");
+            const closeBtn = document.querySelector(".close-btn");
+        
+            function abrirPopup() {
+                popup.style.display = "flex";
+            }
+        
+            function fecharPopup() {
+                popup.style.display = "none";
+                setTimeout(abrirPopup, 3 * 60 * 1000); // Reabre em 3 minutos (180000 ms)
+            }
+        
+            // Fechar o popup ao clicar no botão de fechar
+            closeBtn.addEventListener("click", fecharPopup);
+        
+            // Fechar o popup ao clicar fora do conteúdo
+            popup.addEventListener("click", function(event) {
+                // Verificar se o clique foi fora do conteúdo (ou seja, na área de fundo do modal)
+                if (event.target === popup) {
+                    fecharPopup();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

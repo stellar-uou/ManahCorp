@@ -1,5 +1,6 @@
 /* Estilo para garantir que o conteúdo não se sobreponha ao menu lateral */
 body {
+    background-color: #dedfe071 !important;
     padding-left: 250px;
     padding-bottom: 60px; /* Reserva espaço para o rodapé */
 }
